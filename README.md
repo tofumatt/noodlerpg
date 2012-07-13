@@ -1,5 +1,9 @@
 # NoodleRPG
 
+Welcome to a world that makes sense in multiple dimensions.
+
+![Welcome](http://dl.dropbox.com/u/1913694/noodleRPG/home.jpg)
+
 ## Installation instructions
 
 Clone the repository
