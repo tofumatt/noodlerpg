@@ -1,0 +1,173 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('../fonts/League_Gothic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CPMono_v07Plain';
+    src: url('../fonts/CPMono_v07_Plain-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CabinSketchRegular';
+    src: url('../fonts/CabinSketch-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #111;
+    font-family: 'CPMono_v07Plain';
+    padding-top: 20px;
+}
+
+.wrapper {
+    background-image: url('/scenes/default.jpg');
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    box-shadow: inset #090909 0px 0px 25px;
+    height: 580px;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    width: 780px;
+}
+
+#header {
+    clear: both;
+    float: left;
+    height: 20px;
+    width: 780px;
+}
+
+#header .logo {
+    background-image: url('/logo.png');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+#login {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 115px;
+    height: 132px;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'CabinSketchRegular';
+    font-size: 100px;
+    text-align: center;
+    margin-top: 60px;
+    color: #eee;    
+    text-shadow: #111 1px 1px 5px;
+}
+
+p.intro {
+    background-color: #00789f;
+    margin-top: 80px;
+    text-align: center;
+    padding: 5px;
+    color: #eee;
+    text-shadow: #111 1px 1px 3px;
+}
+
+.message {
+    background-image: url('/items/ship-message.png');
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: -290px;
+    top: -190px;
+    display: none;
+}
+
+.message p {
+    font-family: 'LeagueGothicRegular';
+    font-size: 35px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 60px;
+    left: 45px;
+    width: 180px;
+    text-align: center;
+    color: #5d8883;
+}
+
+#ship {
+    background-image: url('/items/ship.png');
+    background-repeat: no-repeat;
+    border-radius: 70px;
+    cursor: pointer;
+    position: absolute;
+    left: 500px;
+    top: 400px;
+    width: 115px;
+    height: 132px;
+}
+
+#ship:hover {
+    box-shadow: inset #2ec9f6 0px 0px 20px;
+}
+
+#ship:hover .message {
+    display: block;
+}
