@@ -1,0 +1,37 @@
+[
+    {
+        "enemies":
+        [
+            {
+                "name": "some-enemy-name",
+                "avatar_alive": "/enemies/enemy-alive.png",
+                "avatar_dead": "/enemies/enemy-dead.png",
+                "damage_low_range": 1,
+                "damage_high_range": 5,
+                "gold_low_range": 1,
+                "gold_high_range": 5
+            }
+        ]
+    },
+    {
+        "tools":
+        [
+            {
+                "name": "battery",
+                "prerequisites": []
+            },
+            {
+                "name": "lawnmower",
+                "prerequisites":
+                [
+                    {
+                        "tool": "battery"
+                    },
+                    {
+                        "tool": "blade"
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,24 @@
+[
+    {
+        "name": "engineer",
+        "avatar_alive": "/jobs/engineer-alive.png",
+        "avatar_dead": "/jobs/engineer-dead.png",
+        "mp_multiplier": 1,
+        "speed_multiplier": 3,
+        "strength_multiplier": 3,
+        "moxie_multiplier": 6,
+        "min_level_access": 1,
+        "prerequisite_job": false
+    },
+    {
+        "name": "wizard",
+        "avatar_alive": "/jobs/wizard-alive.png",
+        "avatar_dead": "/jobs/wizard-dead.png",
+        "mp_multiplier": 10,
+        "speed_multiplier": 5,
+        "strength_multiplier": 2,
+        "moxie_multiplier": 8,
+        "min_level_access": 2,
+        "prerequisite_job": "engineer"
+    }
+]

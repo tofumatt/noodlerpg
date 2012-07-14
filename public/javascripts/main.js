@@ -3,7 +3,7 @@
 $(function() {
   var loginForm = $('form#login-form');
 
-  // Browser ID login
+  // Persona login
   loginForm.on('click', '#login', function() {
     navigator.id.getVerifiedEmail(function(assertion) {
       if (assertion) {

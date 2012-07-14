@@ -22,6 +22,10 @@ Run the site
 
 > node app.js
 
+## Game configuration
+
+To configure your enemies, jobs, characters and tools combos, you will need to set them up in config/*.json.
+
 ## Tests
 
 > make test
