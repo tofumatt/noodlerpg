@@ -5,3 +5,4 @@ config/*.json
 public/jobs/*
 public/enemies/*
 public/tools/*
+public/locations/*
