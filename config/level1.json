@@ -20,7 +20,13 @@
             "prerequisites": []
         },
         {
+            "name": "blade",
+            "min_level": 1,
+            "prerequisites": []
+        },
+        {
             "name": "lawnmower",
+            "min_level": 2,
             "prerequisites":
             [
                 {

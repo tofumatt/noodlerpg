@@ -225,6 +225,14 @@ p.intro, .game h1, .dashboard h1 {
     width: 200px;
 }
 
+a.button {
+    border-radius: 3px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0097e5;
+    padding: 2px 8px 2px 8px;
+}
+
 .level1 .wrapper {
     background-image: url('/locations/level1-preview.jpg');
 }
