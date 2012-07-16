@@ -209,16 +209,26 @@ p.intro, .game h1, .dashboard h1 {
     color: #eee;
     left: 50px;
     top: 105px;
+    font-size: 18px;
     width: 480px;
     height: 445px;
     overflow: auto;
     text-shadow: #000 1px 1px 1px;
 }
 
+.stats li {
+    margin-top: 15px;
+}
+
+.stats li h3 {
+    float: left;
+    width: 200px;
+}
+
 .level1 .wrapper {
     background-image: url('/locations/level1-preview.jpg');
 }
 
-.level1 .wrapper.detail {
+.level1.detail .wrapper {
     background-image: url('/locations/level1-detail.jpg');
 }

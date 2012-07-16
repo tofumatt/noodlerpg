@@ -6,3 +6,20 @@ block content
   .stats
     h2 Current Stats
 
+    ol
+      li
+        h3 Level
+        span= session.level
+      li
+        h3 HP
+        span= session.hp
+      li
+        h3 Gold
+        span= session.gold
+      li
+        h3 Job
+        span
+          if session.job
+            = session.job
+          else
+            = "(not set)"

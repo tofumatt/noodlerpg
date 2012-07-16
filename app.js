@@ -15,10 +15,26 @@ var isLoggedIn = function(req, res, next) {
     err.status = 403;
     next(new Error('not allowed!'));
   }
+};
+
+var hasJob = function(req, res, next) {
+  if (req.session.job) {
+    next();
+  } else {
+    res.redirect('/job');
+  }
+};
+
+var hasNoJob = function(req, res, next) {
+  if (!req.session.job) {
+    next();
+  } else {
+    res.redirect('/dashboard');
+  }
 }
 
 // routes
-require("./routes")(app, db, isLoggedIn);
+require("./routes")(app, db, isLoggedIn, hasJob, hasNoJob);
 require('./routes/auth')(app, nconf, isLoggedIn);
 
 app.get('/404', function(req, res, next){

@@ -1,0 +1,12 @@
+extend layout
+
+block content
+  p.intro= title
+
+  h1 Available Jobs
+  
+  form(method='POST', action='/job')
+    select(name='job')
+      option(value='')
+      option(value='engineer') engineer
+      option(value='technician') technician

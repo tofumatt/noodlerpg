@@ -1,6 +1,6 @@
 var game = require('../lib/game');
 
-module.exports = function(app, db, isLoggedIn) {
+module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob) {
   app.get('/', function(req, res) {
     if (req.session.email) {
       res.redirect('/dashboard');
@@ -12,28 +12,43 @@ module.exports = function(app, db, isLoggedIn) {
   });
 
   app.get('/dashboard', isLoggedIn, function(req, res) {
-    game.preload(req, db, function(err, level) {
+    game.preload(req, db, function(err, user) {
+      req.session = user;
       res.render('game_dashboard', {
         pageType: 'dashboard',
-        level: level,
+        level: user.level,
         title: 'Dashboard'
       });
     });
   });
 
-  app.get('/preview/:level', isLoggedIn, function(req, res) {
-    game.preload(req, db, function(err, level) {
-      var config = require('../config/' + level);
+  app.get('/job', isLoggedIn, hasNoJob, function(req, res) {
+    res.render('job', {
+      pageType: 'job',
+      title: 'Choose a job!'
+    });
+  });
+
+  app.post('/job', isLoggedIn, hasNoJob, function(req, res) {
+    req.session.job = req.body.job;
+    user.saveStats(req, db, function(err, user) {
+      res.redirect('/dashboard');
+    });
+  });
+
+  app.get('/preview/:level', isLoggedIn, hasJob, function(req, res) {
+    game.preload(req, db, function(err, user) {
+      var config = require('../config/level' + user.level);
 
       res.render('game_preview', {
-        pageType: 'game ' + level,
-        level: level,
+        pageType: 'game level' + user.level,
+        level: user.level,
         title: config.location 
       });
     });
   });
 
-  app.get('/detail/:level', isLoggedIn, function(req, res) {
+  app.get('/detail/:level', isLoggedIn, hasJob, function(req, res) {
     try {
       var level = parseInt(req.params.level.split('level')[1], 10);
       var config = require('../config/level' + level);
@@ -42,7 +57,7 @@ module.exports = function(app, db, isLoggedIn) {
         res.redirect('/dashboard');
       } else {
         res.render('game_detail', {
-          pageType: 'game detail ' + level,
+          pageType: 'game detail level' + level,
           level: level,
           title: 'The world of ' + config.location
         });
