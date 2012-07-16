@@ -6,8 +6,10 @@ module.exports = function(app, nconf, isLoggedIn) {
     auth.verify(req, nconf, function(error, email) {
       if (email) {
         req.session.email = email;
+        res.redirect('/dashboard');
+      } else {
+        res.redirect('/');
       }
-      res.redirect('/');
     });
   });
 

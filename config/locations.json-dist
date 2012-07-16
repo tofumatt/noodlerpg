@@ -1,8 +1,0 @@
-[
-    {
-        "name": "some location",
-        "image_preview": "/locations/some-location-preview.png",
-        "image_detail": "/locations/some-location-detail.png",
-        "min_level": 1
-    }
-]

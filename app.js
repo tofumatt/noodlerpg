@@ -2,6 +2,8 @@ var express = require('express');
 var configurations = module.exports;
 var app = express.createServer();
 var nconf = require('nconf');
+var redis = require('redis');
+var db = redis.createClient();
 var settings = require('./settings')(app, configurations, express);
 
 nconf.argv().env().file({ file: 'local.json' });
@@ -16,7 +18,7 @@ var isLoggedIn = function(req, res, next) {
 }
 
 // routes
-require("./routes")(app, isLoggedIn);
+require("./routes")(app, db, isLoggedIn);
 require('./routes/auth')(app, nconf, isLoggedIn);
 
 app.get('/404', function(req, res, next){

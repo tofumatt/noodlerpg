@@ -120,13 +120,20 @@ h1 {
     text-shadow: #111 1px 1px 5px;
 }
 
-p.intro {
+p.intro, .game h1, .dashboard h1 {
     background-color: #00789f;
     margin-top: 80px;
+    font-size: 13px;
+    font-family: 'CPMono_v07Plain';
     text-align: center;
     padding: 5px;
     color: #eee;
     text-shadow: #111 1px 1px 3px;
+}
+
+.game h1, .dashboard h1 {
+    float: right;
+    margin-top: -15px;
 }
 
 .message {
@@ -152,6 +159,13 @@ p.intro {
     color: #5d8883;
 }
 
+#ship > a {
+    display: block;
+    width: 115px;
+    height: 132px;
+    text-indent: -9999px;
+}
+
 #ship {
     background-image: url('/items/ship.png');
     background-repeat: no-repeat;
@@ -164,10 +178,47 @@ p.intro {
     height: 132px;
 }
 
-#ship:hover {
+#ship:hover, .game .planet:hover {
     box-shadow: inset #2ec9f6 0px 0px 20px;
+}
+
+.game .planet:hover {
+    cursor: pointer;
+    border-radius: 120px;
 }
 
 #ship:hover .message {
     display: block;
+}
+
+.game .planet {
+    display: block;
+    position: absolute;
+    left: 95px;
+    top: 80px;
+    width: 214px;
+    height: 214px;
+}
+
+.dashboard .wrapper {
+    background-image: url('/scenes/dashboard.jpg');
+}
+
+.dashboard .stats {
+    position: absolute;
+    color: #eee;
+    left: 50px;
+    top: 105px;
+    width: 480px;
+    height: 445px;
+    overflow: auto;
+    text-shadow: #000 1px 1px 1px;
+}
+
+.level1 .wrapper {
+    background-image: url('/locations/level1-preview.jpg');
+}
+
+.level1 .wrapper.detail {
+    background-image: url('/locations/level1-detail.jpg');
 }
