@@ -12,37 +12,5 @@
             "gold_low_range": 6,
             "gold_high_range": 11
         }
-    ],
-    "tools":
-    [
-        {
-            "name": "knife",
-            "min_level": 2,
-            "damage_low_range": 5,
-            "damage_high_range": 10,
-            "prerequisites": []
-        },
-        {
-            "name": "shoelace",
-            "min_level": 2,
-            "damage_low_range": 6,
-            "damage_high_range": 11,
-            "prerequisites": []
-        },
-        {
-            "name": "lawnmower",
-            "min_level": 2,
-            "damage_low_range": 10,
-            "damage_high_range": 14,
-            "prerequisites":
-            [
-                {
-                    "tool": "battery"
-                },
-                {
-                    "tool": "razor blade"
-                }
-            ]
-        }
     ]
 }

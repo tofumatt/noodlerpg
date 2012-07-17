@@ -11,23 +11,16 @@
             "damage_high_range": 10,
             "gold_low_range": 2,
             "gold_high_range": 5
-        }
-    ],
-    "tools":
-    [
-        {
-            "name": "battery",
-            "min_level": 1,
-            "damage_low_range": 2,
-            "damage_high_range": 6,
-            "prerequisites": []
         },
         {
-            "name": "razor blade",
-            "min_level": 1,
-            "damage_low_range": 4,
-            "damage_high_range": 8,
-            "prerequisites": []
+            "name": "Rocky",
+            "avatar_alive": "/enemies/rocky-alive.png",
+            "avatar_dead": "/enemies/rocky-dead.png",
+            "hp": 15,
+            "damage_low_range": 3,
+            "damage_high_range": 14,
+            "gold_low_range": 4,
+            "gold_high_range": 7
         }
     ]
 }

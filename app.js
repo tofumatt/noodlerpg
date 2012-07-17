@@ -35,7 +35,7 @@ var hasNoJob = function(req, res, next) {
 
 // routes
 require("./routes")(app, db, isLoggedIn, hasJob, hasNoJob);
-require('./routes/auth')(app, nconf, isLoggedIn);
+require('./routes/auth')(app, db, nconf, isLoggedIn);
 
 app.get('/404', function(req, res, next){
   next();

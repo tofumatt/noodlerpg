@@ -1,0 +1,55 @@
+[
+    {
+        "name": "battery",
+        "min_level": 1,
+        "damage_low_range": 2,
+        "damage_high_range": 6,
+        "mp_low_range": 0,
+        "mp_high_range": 0,
+        "prerequisites": []
+    },
+    {
+        "name": "razor blade",
+        "min_level": 1,
+        "damage_low_range": 4,
+        "damage_high_range": 8,
+        "mp_low_range": 0,
+        "mp_high_range": 0,
+        "prerequisites": []
+    },
+    {
+        "name": "knife",
+        "min_level": 2,
+        "damage_low_range": 5,
+        "damage_high_range": 10,
+        "mp_low_range": 0,
+        "mp_high_range": 0,
+        "prerequisites": []
+    },
+    {
+        "name": "shoelace",
+        "min_level": 2,
+        "damage_low_range": 6,
+        "damage_high_range": 11,
+        "mp_low_range": 0,
+        "mp_high_range": 0,
+        "prerequisites": []
+    },
+    {
+        "name": "lawnmower",
+        "min_level": 2,
+        "damage_low_range": 10,
+        "damage_high_range": 14,
+        "mp_low_range": 0,
+        "mp_high_range": 0,
+        "prerequisites":
+        [
+            {
+                "tool": "battery"
+            },
+            {
+                "tool": "razor blade"
+            }
+        ]
+    }
+]

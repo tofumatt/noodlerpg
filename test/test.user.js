@@ -15,8 +15,6 @@ nconf.argv().env().file({ file: 'test/local-test.json' });
 db.select(app.set('redisnoodle'), function(err, res) {
   if (err) {
     console.log('TEST database connection failed.');
-  } else {
-    console.log('TEST database connected...');
   }
 });
 
@@ -32,7 +30,7 @@ var req = {
 };
 
 describe('user', function() {
-  describe('POST /saveStats', function() {
+  describe('saveStats', function() {
     it('saves user stats', function(done) {
       user.saveStats(req, db, function(err, user) {
         should.exist(user);
@@ -45,13 +43,15 @@ describe('user', function() {
     });
 
     it('gets user stats', function(done) {
-      user.getStats(req, db, function(err, user) {
-        should.exist(user);
-        user.email.should.equal(req.session.email);
-        user.job.should.equal(req.session.job);
-        user.level.should.equal(JSON.stringify(req.session.level));
-        user.gold.should.equal(JSON.stringify(req.session.gold));
-        done();
+      user.saveStats(req, db, function(err, userStatSave) {
+        user.getStats(req.session.email, db, function(err, userStat) {
+          should.exist(userStat);
+          userStat.email.should.equal(req.session.email);
+          userStat.job.should.equal(req.session.job);
+          userStat.level.should.equal(JSON.stringify(req.session.level));
+          userStat.gold.should.equal(JSON.stringify(req.session.gold));
+          done();
+        });
       });
     });
   });

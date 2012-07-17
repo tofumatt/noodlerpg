@@ -1,12 +1,22 @@
 var auth = require('../lib/authenticate');
+var user = require('../lib/user');
 
-module.exports = function(app, nconf, isLoggedIn) {
+module.exports = function(app, db, nconf, isLoggedIn) {
   // Login
   app.post('/login', function(req, res) {
     auth.verify(req, nconf, function(error, email) {
       if (email) {
-        req.session.email = email;
-        res.redirect('/dashboard');
+        user.getStats(email, db, function(err, userStat) {
+          req.session.email = email;
+          req.session.level = userStat.level;
+          req.session.hp = userStat.hp;
+          req.session.tools = userStat.tools;
+          req.session.job = userStat.job;
+          req.session.gold = userStat.gold;
+          req.session.enemy = userStat.enemy;
+
+          res.redirect('/dashboard');
+        });
       } else {
         res.redirect('/');
       }
@@ -14,10 +24,8 @@ module.exports = function(app, nconf, isLoggedIn) {
   });
 
   // Logout
-  app.get('/logout', function(req, res) {
-    if (req.session) {
-      delete req.session.email;
-    }
+  app.get('/logout', isLoggedIn, function(req, res) {
+    req.session.reset();
     res.redirect('/?logged_out=1', 303);
   });
 };
