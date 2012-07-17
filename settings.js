@@ -21,7 +21,7 @@ module.exports = function(app, configurations, express) {
       // will expire after duration (ms)
       // from last session.reset() or
       // initial cookieing.
-      duration: 24 * 60 * 60 * 1000 * 28 // 4 weeks
+      duration: 24 * 60 * 60 * 1000 * 35 // 5 weeks
     }));
     app.use(app.router);
     app.use(function(req, res, next) {

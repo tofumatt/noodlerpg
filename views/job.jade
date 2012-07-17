@@ -4,9 +4,11 @@ block content
   p.intro= title
 
   h1 Available Jobs
-  
-  form(method='POST', action='/job')
-    select(name='job')
-      option(value='')
-      option(value='engineer') engineer
-      option(value='technician') technician
+
+  ul.jobs
+    li(data-job='engineer')
+      img(src='/jobs/engineer-alive.png')
+      span Be an Engineer!
+    li(data-job='technician')
+      img(src='/jobs/technician-alive.png')
+      span Be a Technician!

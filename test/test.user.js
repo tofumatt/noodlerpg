@@ -25,7 +25,9 @@ var req = {
     email: 'test@test.org',
     job: 'Engineer',
     level: 1,
-    gold: 100
+    gold: 100,
+    tools: undefined,
+    hp: 50
   }
 };
 

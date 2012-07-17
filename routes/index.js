@@ -1,4 +1,5 @@
 var game = require('../lib/game');
+var user = require('../lib/user');
 
 module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob) {
   app.get('/', function(req, res) {
@@ -22,17 +23,21 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob) {
     });
   });
 
-  app.get('/job', isLoggedIn, hasNoJob, function(req, res) {
+  app.get('/job', isLoggedIn, function(req, res) {
     res.render('job', {
       pageType: 'job',
       title: 'Choose a job!'
     });
   });
 
-  app.post('/job', isLoggedIn, hasNoJob, function(req, res) {
-    req.session.job = req.body.job;
-    user.saveStats(req, db, function(err, user) {
-      res.redirect('/dashboard');
+  app.post('/job', isLoggedIn, function(req, res) {
+    user.getStats(req, db, function(err, userStat) {
+      req.session = userStat;
+      req.session.job = req.body.job;
+
+      user.saveStats(req, db, function(err, user) {
+        res.redirect('/dashboard');
+      });
     });
   });
 
@@ -43,7 +48,7 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob) {
       res.render('game_preview', {
         pageType: 'game level' + user.level,
         level: user.level,
-        title: config.location 
+        title: config.location
       });
     });
   });

@@ -178,11 +178,14 @@ p.intro, .game h1, .dashboard h1 {
     height: 132px;
 }
 
-#ship:hover, .game .planet:hover {
+#ship:hover,
+.game .planet:hover,
+.jobs li:hover {
     box-shadow: inset #2ec9f6 0px 0px 20px;
 }
 
-.game .planet:hover {
+.game .planet:hover,
+.jobs li:hover {
     cursor: pointer;
     border-radius: 120px;
 }
@@ -231,6 +234,30 @@ a.button {
     color: #fff;
     background-color: #0097e5;
     padding: 2px 8px 2px 8px;
+}
+
+.jobs {
+    margin-top: 20px;
+}
+
+.jobs li {
+    float: left;
+    margin-left: 10px;
+    position: relative;
+}
+
+.jobs li span {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 2px;
+    width: auto;
+    background-color: #feed30;
+}
+
+.jobs li:hover span {
+    display: block;
 }
 
 .level1 .wrapper {

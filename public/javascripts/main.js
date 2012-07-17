@@ -12,4 +12,14 @@ $(function() {
       }
     });
   });
+
+  // Job selection
+  var jobList = $('ul.jobs');
+
+  jobList.on('click', 'li', function() {
+    var self = $(this);
+    $.post('/job', { job: self.data('job') }, function(data) {
+      document.location = '/';
+    });
+  });
 });
