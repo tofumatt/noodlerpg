@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var configurations = module.exports;
 var app = express.createServer();
@@ -31,10 +33,35 @@ var hasNoJob = function(req, res, next) {
   } else {
     res.redirect('/dashboard');
   }
-}
+};
+
+var sufficientLevelAccess = function(req, res, next) {
+  var level = parseInt(req.params.level || req.body.level, 10);
+
+  if (!isNaN(level) && req.session.level <= level) {
+    next();
+  } else {
+    res.redirect('/dashboard');
+  }
+};
+
+var hasEnemy = function(req, res, next) {
+  if (req.session.enemy) {
+    next();
+  } else {
+    res.redirect('/dashboard');
+  }
+};
+
+var resetEnemy = function(req, res, next) {
+  if (req.session.enemy) {
+    req.session.enemy = null;
+  }
+  next();
+};
 
 // routes
-require("./routes")(app, db, isLoggedIn, hasJob, hasNoJob);
+require("./routes")(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevelAccess, hasEnemy, resetEnemy);
 require('./routes/auth')(app, db, nconf, isLoggedIn);
 
 app.get('/404', function(req, res, next){

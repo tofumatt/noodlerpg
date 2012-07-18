@@ -256,6 +256,59 @@ a.button {
     background-color: #feed30;
 }
 
+p.battle-message {
+    background-color: #111;
+    font-family: 'CabinSketchRegular';
+    color: #eee;
+    padding: 5px;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    max-width: 400px;
+}
+
+ol.stats {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    width: 200px;
+    background-color: #111;
+    color: #eee;
+    padding: 0px 10px 10px 10px;
+}
+
+ol.stats li {
+    margin-top: 5px;
+}
+
+ol.stats span {
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+img.enemy {
+    position: absolute;
+    top: 130px;
+    left: 230px;
+}
+
+img.player {
+    position: absolute;
+    top: 130px;
+    left: 10px;
+}
+
+ol.tools {
+    display: block;
+    position: absolute;
+    top: 400px;
+    left: 10px;
+    background-color: #111;
+    border-radius: 10px;
+}
+
 .jobs li:hover span {
     display: block;
 }

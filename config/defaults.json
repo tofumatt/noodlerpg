@@ -1,5 +1,15 @@
 {
     "hp": 50,
     "gold": 100,
-    "tools": ["fist"]
+    "tools": [
+        {
+            "name": "fist",
+            "min_level": 1,
+            "damage_low_range": 1,
+            "damage_high_range": 3,
+            "mp_low_range": 0,
+            "mp_high_range": 0,
+            "prerequisites": []
+        }
+    ]
 }

@@ -13,7 +13,6 @@ module.exports = function(app, db, nconf, isLoggedIn) {
           req.session.tools = userStat.tools;
           req.session.job = userStat.job;
           req.session.gold = userStat.gold;
-          req.session.enemy = userStat.enemy;
 
           res.redirect('/dashboard');
         });

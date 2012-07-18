@@ -24,7 +24,7 @@ var req = {
     job: 'Engineer',
     level: 1,
     gold: 100,
-    tools: undefined,
+    tools: ['fist'],
     hp: 50
   }
 };

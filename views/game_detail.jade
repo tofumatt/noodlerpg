@@ -3,9 +3,32 @@ extend layout
 block content
   h1= title
 
-  a(class='battle alive', href='#')
+  if session.hp < 1
+    img(src='#{session.job.avatar_dead}', class='battle dead player', data-hp='#{session.hp}')
+  else
+    img(src='#{session.job.avatar_alive}', class='battle alive player', data-hp='#{session.hp}')
+    img(src='#{enemy.avatar_alive}', class='battle alive enemy', data-enemy='#{enemy.name}', data-hp='#{enemy.hp}')
 
-  p(class='battle-message')
+    ol.tools(data-level='#{level}')
+      - for(var i = 0; i < session.tools.length; i ++) {
+        li(data-tool='#{session.tools[i].name}')
+          img(src='/tools/#{session.tools[i].name}.png')
+      - }
+
+  if session.hp > 0
+    p(class='battle-message')= message
+  else
+    p(class='battle-message') Uh oh you are too ill to fight! :(
+
+  ol.stats
+    li#hp HP
+      span= session.hp
+    li#mp MP
+      span= session.mp
+    li#damage Damage
+      span
+    li#gold Gold
+      span= session.gold
 
   #ship
     .message
