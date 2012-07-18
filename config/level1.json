@@ -6,6 +6,14 @@
             "name": "Starky",
             "avatar_alive": "/enemies/starky-alive.png",
             "avatar_dead": "/enemies/starky-dead.png",
+            "battle_messages": [
+                {
+                    "message": "Starky attacks you from behind like a walrus!"
+                },
+                {
+                    "message": "Starky eats a lemon in your face!"
+                }
+            ],
             "hp": 10,
             "damage_low_range": 1,
             "damage_high_range": 10,
@@ -16,6 +24,14 @@
             "name": "Rocky",
             "avatar_alive": "/enemies/rocky-alive.png",
             "avatar_dead": "/enemies/rocky-dead.png",
+            "battle_messages": [
+                {
+                    "message": "Rocky attacks you from behind like a walrus!"
+                },
+                {
+                    "message": "Rocky eats a lemon in your face!"
+                }
+            ],
             "hp": 15,
             "damage_low_range": 3,
             "damage_high_range": 14,

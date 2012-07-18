@@ -6,6 +6,14 @@
             "name": "Porky",
             "avatar_alive": "/enemies/porky-alive.png",
             "avatar_dead": "/enemies/porky-dead.png",
+            "battle_messages": [
+                {
+                    "message": "Porky attacks you from behind like a walrus!",
+                },
+                {
+                    "message": "Porky eats a lemon in your face!"
+                }
+            ],
             "hp": 25,
             "damage_low_range": 3,
             "damage_high_range": 16,
