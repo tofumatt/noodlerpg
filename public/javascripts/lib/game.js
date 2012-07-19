@@ -56,8 +56,6 @@ var Game = function() {
             }
           }
 
-
-
           updateStats({
             player_hp: playerHP,
             enemy_hp: enemyHP,
