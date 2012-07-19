@@ -25,7 +25,8 @@ var req = {
     level: 1,
     gold: 100,
     tools: ['fist'],
-    hp: 50
+    hp: 50,
+    xp: 1
   }
 };
 
@@ -38,6 +39,7 @@ describe('user', function() {
         user.job.should.equal(req.session.job);
         user.level.should.equal(req.session.level);
         user.gold.should.equal(req.session.gold);
+        user.xp.should.equal(req.session.xp);
         done();
       });
     });
@@ -50,6 +52,7 @@ describe('user', function() {
           userStat.job.should.equal(req.session.job);
           userStat.level.should.equal(JSON.stringify(req.session.level));
           userStat.gold.should.equal(JSON.stringify(req.session.gold));
+          userStat.xp.should.equal(JSON.stringify(req.session.xp));
           done();
         });
       });

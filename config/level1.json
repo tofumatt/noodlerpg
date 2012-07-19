@@ -14,11 +14,13 @@
                     "message": "Starky eats a lemon in your face!"
                 }
             ],
-            "hp": 10,
-            "damage_low_range": 1,
+            "hp": 20,
+            "damage_low_range": 2,
             "damage_high_range": 10,
             "gold_low_range": 2,
-            "gold_high_range": 5
+            "gold_high_range": 7,
+            "xp_low_range": 1,
+            "xp_high_range": 2
         },
         {
             "name": "Rocky",
@@ -32,11 +34,13 @@
                     "message": "Rocky eats a lemon in your face!"
                 }
             ],
-            "hp": 15,
+            "hp": 25,
             "damage_low_range": 3,
             "damage_high_range": 14,
             "gold_low_range": 4,
-            "gold_high_range": 7
+            "gold_high_range": 9,
+            "xp_low_range": 1,
+            "xp_high_range": 2
         }
     ]
 }

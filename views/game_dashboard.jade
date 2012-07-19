@@ -6,19 +6,23 @@ block content
   .stats
     h2 Current Stats
 
-    ol
-      li
+    ol.dashboard-stats
+      li#level
         h3 Level
         span= session.level
         if session.job
           a(href='/preview/' + session.level, class='button') Go battle!
-      li
+      li#hp
         h3 HP
         span= session.hp
-      li
+        a(href='/refuel/', class='button', id='refuel') Buy health (cost 10)
+      li#xp
+        h3 XP
+        span= session.xp
+      li#gold
         h3 Gold
         span= session.gold
-      li
+      li#job
         h3 Job
         span
           if session.job

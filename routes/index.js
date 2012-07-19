@@ -22,6 +22,29 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
     });
   });
 
+  // This is temporary until we actually have store functionality
+  app.get('/refuel', isLoggedIn, resetEnemy, function(req, res) {
+    if (req.session.gold >= 10) {
+      var data = { result: {} };
+      req.session.hp += 15;
+      req.session.gold -= 10;
+
+      user.saveStats(req, db, function(err, user) {
+        if (err) {
+          data.result.status = 500;
+        } else {
+          data.result = {
+            hp: user.hp,
+            gold: user.gold,
+            status: 200
+          }
+        }
+
+        res.json(data);
+      });
+    }
+  });
+
   app.get('/job', isLoggedIn, hasNoJob, resetEnemy, function(req, res) {
     res.render('job', {
       pageType: 'job',

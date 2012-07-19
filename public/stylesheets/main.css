@@ -225,7 +225,7 @@ p.intro, .game h1, .dashboard h1 {
 
 .stats li h3 {
     float: left;
-    width: 200px;
+    width: 110px;
 }
 
 a.button {
@@ -288,6 +288,10 @@ ol.stats span {
     font-size: 20px;
 }
 
+img.enemy, img.player {
+    padding: 5px;
+}
+
 img.enemy {
     position: absolute;
     top: 130px;
@@ -300,13 +304,36 @@ img.player {
     left: 10px;
 }
 
+img.enemy.dead, img.player.dead {
+    border-radius: 100px;
+    box-shadow: inset #f00 0px 0px 30px;
+}
+
+img.action {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    display: none;
+}
+
 ol.tools {
     display: block;
     position: absolute;
     top: 400px;
     left: 10px;
-    background-color: #111;
-    border-radius: 10px;
+}
+
+ol.tools li {
+    border: 4px solid #111;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+
+ol.tools li:hover {
+    border: 4px solid #fff;
+    opacity: 0.7;
 }
 
 .jobs li:hover span {
@@ -319,4 +346,12 @@ ol.tools {
 
 .level1.detail .wrapper {
     background-image: url('/locations/level1-detail.jpg');
+}
+
+.level2 .wrapper {
+    background-image: url('/locations/level2-preview.jpg');
+}
+
+.level2.detail .wrapper {
+    background-image: url('/locations/level2-detail.jpg');
 }

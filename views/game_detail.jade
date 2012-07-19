@@ -8,6 +8,7 @@ block content
   else
     img(src='#{session.job.avatar_alive}', class='battle alive player', data-hp='#{session.hp}')
     img(src='#{enemy.avatar_alive}', class='battle alive enemy', data-enemy='#{enemy.name}', data-hp='#{enemy.hp}')
+    img(src='/actions/pow.gif', class='action')
 
     ol.tools(data-level='#{level}')
       - for(var i = 0; i < session.tools.length; i ++) {
@@ -27,6 +28,10 @@ block content
       span= session.mp
     li#damage Damage
       span
+    li#enemy-hp Enemy HP
+      span= enemy.hp
+    li#xp XP
+      span= session.xp
     li#gold Gold
       span= session.gold
 
