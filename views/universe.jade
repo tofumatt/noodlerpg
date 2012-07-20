@@ -1,0 +1,6 @@
+extend layout
+
+block content
+  - for (var i = 1; i < session.level + 1; i ++) {
+    a(href='/preview/#{i}', )= i
+  - }

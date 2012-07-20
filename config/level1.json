@@ -6,7 +6,8 @@
             "name": "Starky",
             "avatar_alive": "/enemies/starky-alive.png",
             "avatar_dead": "/enemies/starky-dead.png",
-            "battle_messages": [
+            "battle_messages":
+            [
                 {
                     "message": "Starky attacks you from behind like a walrus!"
                 },
@@ -26,7 +27,8 @@
             "name": "Rocky",
             "avatar_alive": "/enemies/rocky-alive.png",
             "avatar_dead": "/enemies/rocky-dead.png",
-            "battle_messages": [
+            "battle_messages":
+            [
                 {
                     "message": "Rocky attacks you from behind like a walrus!"
                 },

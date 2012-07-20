@@ -340,6 +340,10 @@ ol.tools li:hover {
     display: block;
 }
 
+.universe .wrapper {
+    background-image: url('/scenes/universe.jpg');
+}
+
 .level1 .wrapper {
     background-image: url('/locations/level1-preview.jpg');
 }

@@ -22,6 +22,14 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
     });
   });
 
+  app.get('/universe', isLoggedIn, resetEnemy, function(req, res) {
+    res.render('universe', {
+      pageType: 'universe',
+      level: user.level,
+      title: 'Noodle Universe'
+    });
+  });
+
   // This is temporary until we actually have store functionality
   app.get('/refuel', isLoggedIn, resetEnemy, function(req, res) {
     if (req.session.gold >= 10) {
@@ -93,7 +101,7 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
     var level = parseInt(req.body.level, 10);
     var config = require('../config/level' + level);
     var result = {};
-
+    
     game.battle(req, req.session.enemy, db, function(err, result) {
       res.json({
         result: result

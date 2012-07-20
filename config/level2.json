@@ -6,7 +6,8 @@
             "name": "Porky",
             "avatar_alive": "/enemies/porky-alive.png",
             "avatar_dead": "/enemies/porky-dead.png",
-            "battle_messages": [
+            "battle_messages":
+            [
                 {
                     "message": "Porky attacks you from behind like a pig!"
                 },
