@@ -336,6 +336,24 @@ ol.tools li:hover {
     opacity: 0.7;
 }
 
+a.fight-again {
+    display: none;
+    position: absolute;
+    left: 200px;
+    top: 70px;
+    font-size: 28px;
+    background-color: #fff;
+    box-shadow: #111 3px 3px 1px;
+    padding: 3px 5px 3px 5px;
+    text-decoration: none;
+    color: #111;
+}
+
+a.fight-again:hover {
+    background-color: #111;
+    color: #fff;
+}
+
 .jobs li:hover span {
     display: block;
 }

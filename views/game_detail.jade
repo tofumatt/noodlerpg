@@ -10,6 +10,8 @@ block content
     img(src='#{enemy.avatar_alive}', class='battle alive enemy', data-enemy='#{enemy.name}', data-hp='#{enemy.hp}')
     img(src='/actions/pow.gif', class='action')
 
+    a(href='/detail/#{level}', class='fight-again') fight again!
+
     ol.tools(data-level='#{level}')
       - for(var name in session.tools) {
         li(data-tool='#{session.tools[name].name}')

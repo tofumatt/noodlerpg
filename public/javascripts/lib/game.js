@@ -5,6 +5,7 @@ var Game = function() {
   var player = $('img.player');
   var fightAction = $('img.action');
   var message = $('.battle-message');
+  var fightAgain = $('.fight-again');
 
   var updateStats = function(options) {
     enemy.data('hp', options.enemy_hp);
@@ -43,11 +44,12 @@ var Game = function() {
           var mp = data.result.mp;
 
           if (enemyHP < 1 || playerHP < 1) {
-            if (enemyHP < 1) {
+            if (enemyHP < 1 && playerHP > 0) {
               enemy.attr('src', enemy.attr('src').replace('-alive', '-dead'));
               enemy.addClass('dead').removeClass('alive');
               enemyHP = 0;
               message.text('You win!');
+              fightAgain.fadeIn();
             } else {
               player.attr('src', player.attr('src').replace('-alive', '-dead'));
               player.addClass('dead').removeClass('alive');
