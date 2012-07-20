@@ -344,6 +344,50 @@ ol.tools li:hover {
     background-image: url('/scenes/universe.jpg');
 }
 
+.universe .levels {
+    padding-top: 20px;
+    float: left;
+    display: block;
+}
+
+.universe .levels a {
+    display: block;
+    float: left;
+    margin: 10px;
+    position: relative;
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+    box-shadow: inset #444 0px 0px 30px;
+    text-decoration: none;
+    outline: none;
+}
+
+.universe .levels a span {
+    color: #eee;
+    text-decoration: none;
+    display: none;
+    font-size: 12px;
+    background-color: #111;
+    position: absolute;
+    bottom: 0px;
+}
+
+.universe .levels a:hover img {
+    opacity: 1.0;
+}
+
+.universe .levels a:hover span {
+    display: block;
+}
+
+.universe .levels img {
+    opacity: 0.6;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
 .level1 .wrapper {
     background-image: url('/locations/level1-preview.jpg');
 }

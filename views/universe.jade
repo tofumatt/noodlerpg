@@ -1,6 +1,9 @@
 extend layout
 
 block content
-  - for (var i = 1; i < session.level + 1; i ++) {
-    a(href='/preview/#{i}', )= i
-  - }
+  .levels
+    - for (var i = 1; i < session.level + 1; i ++) {
+      a(href='/preview/#{i}')
+        img(src='/scenes/level.png')
+        span Level #{i}
+    - }
