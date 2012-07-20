@@ -30,10 +30,10 @@
             "battle_messages":
             [
                 {
-                    "message": "Rocky attacks you from behind like a walrus!"
+                    "message": "Rocky attacks you above with boulders!"
                 },
                 {
-                    "message": "Rocky eats a lemon in your face!"
+                    "message": "Rocky showers you with rocks!"
                 }
             ],
             "hp": 25,

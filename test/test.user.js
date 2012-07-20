@@ -89,5 +89,18 @@ describe('user', function() {
         done();
       });
     });
+
+    it('resets the user stats', function(done) {
+      req.session.gold = 1000;
+      req.session.hp = 1000;
+      user.saveStats(req, db, function(err, userStatSave) {
+        user.resetStats(req, db, function(err, user) {
+          should.exist(user);
+          user.gold.should.equal(100);
+          user.hp.should.equal(50);
+          done();
+        });
+      });
+    });
   });
 });

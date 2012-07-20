@@ -232,8 +232,22 @@ a.button {
     border-radius: 3px;
     text-decoration: none;
     color: #fff;
-    background-color: #0097e5;
+    font-size: 18px;
+    font-family: 'LeagueGothicRegular';
+    background-color: #16687f;
     padding: 2px 8px 2px 8px;
+    text-transform: uppercase;
+    margin-left: 10px;
+    text-shadow: none;
+}
+
+a.button:hover {
+    color: #16687f;
+    background-color: #fff;
+}
+
+#start-over span {
+    font-size: 13px;
 }
 
 .jobs {
