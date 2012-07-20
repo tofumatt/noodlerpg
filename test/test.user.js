@@ -57,5 +57,37 @@ describe('user', function() {
         });
       });
     });
+
+    it('sets the user job if correctly defined', function(done) {
+      user.setJob('engineer', db, function(err, job) {
+        should.exist(job);
+        job.name.toLowerCase().should.equal('engineer');
+        done();
+      });
+    });
+
+    it('sets the user job if incorrectly defined', function(done) {
+      user.setJob('engineer-nonexistent', db, function(err, job) {
+        should.exist(job);
+        job.name.toLowerCase().should.equal('engineer');
+        done();
+      });
+    });
+
+    it('sets the user tool if correctly defined', function(done) {
+      user.setTool('fist', db, function(err, tool) {
+        should.exist(tool);
+        tool['fist'].name.toLowerCase().should.equal('fist');
+        done();
+      });
+    });
+
+    it('sets the user tool if incorrectly defined', function(done) {
+      user.setTool('fist-nonexistent', db, function(err, tool) {
+        should.exist(tool);
+        tool['fist'].name.toLowerCase().should.equal('fist');
+        done();
+      });
+    });
   });
 });

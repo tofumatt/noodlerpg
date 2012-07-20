@@ -75,8 +75,8 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
     var config = require('../config/level' + level);
 
     res.render('game_preview', {
-      pageType: 'game level' + req.session.level,
-      level: req.session.level,
+      pageType: 'game level' + level,
+      level: level,
       title: config.location
     });
   });

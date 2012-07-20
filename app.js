@@ -38,7 +38,7 @@ var hasNoJob = function(req, res, next) {
 var sufficientLevelAccess = function(req, res, next) {
   var level = parseInt(req.params.level || req.body.level, 10);
 
-  if (!isNaN(level) && req.session.level <= level) {
+  if (!isNaN(level) && req.session.level >= level) {
     next();
   } else {
     res.redirect('/dashboard');

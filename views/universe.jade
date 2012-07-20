@@ -4,6 +4,11 @@ block content
   .levels
     - for (var i = 1; i < session.level + 1; i ++) {
       a(href='/preview/#{i}')
-        img(src='/scenes/level.png')
+        img(src='/scenes/level#{i}.png')
         span Level #{i}
     - }
+
+  #ship
+    .message
+      p Return to homebase!
+    a(href='/dashboard') Dashboard

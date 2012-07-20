@@ -384,8 +384,8 @@ ol.tools li:hover {
 .universe .levels img {
     opacity: 0.6;
     position: absolute;
-    left: 10px;
-    top: 10px;
+    left: 5px;
+    top: 5px;
 }
 
 .level1 .wrapper {
