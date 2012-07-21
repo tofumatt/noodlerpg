@@ -23,24 +23,6 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
     });
   });
 
-  app.get('/reset', isLoggedIn, resetEnemy, function(req, res) {
-    console.log('got here')
-    user.resetStats(req, db, function(err, user) {
-      req.session = user.gold;
-      req.session.hp = user.hp;
-      req.session.mp = user.mp;
-      req.session.xp = user.xp;
-      req.session.tools = user.tools;
-      req.session.job = user.job;
-      req.session.level = user.level;
-
-      user.saveStats(req, db, function(err, user) {
-        console.log('got here')
-        res.redirect('/dashboard');
-      });
-    });
-  });
-
   app.get('/universe', isLoggedIn, resetEnemy, function(req, res) {
     res.render('universe', {
       pageType: 'universe',

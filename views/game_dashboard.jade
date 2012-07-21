@@ -15,7 +15,7 @@ block content
       li#hp
         h3 HP
         span= session.hp
-        a(href='/refuel/', class='button', id='refuel') Buy health (cost 10)
+        a(href='#', class='button', id='refuel') Buy health (cost 10)
       li#xp
         h3 XP
         span= session.xp
@@ -29,7 +29,3 @@ block content
             = session.job.name
           else
             a(href='/job', class='button') Set a job
-      li#start-over
-        h3 Reset
-        span End game (you will lose all stats)
-          a(href='/reset', class='button') Reset!

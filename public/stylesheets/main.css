@@ -197,10 +197,10 @@ p.intro, .game h1, .dashboard h1 {
 .game .planet {
     display: block;
     position: absolute;
-    left: 95px;
-    top: 80px;
-    width: 214px;
-    height: 214px;
+    left: 85px;
+    top: 70px;
+    width: 234px;
+    height: 234px;
 }
 
 .dashboard .wrapper {
@@ -244,10 +244,6 @@ a.button {
 a.button:hover {
     color: #16687f;
     background-color: #fff;
-}
-
-#start-over span {
-    font-size: 13px;
 }
 
 .jobs {
@@ -434,4 +430,12 @@ a.fight-again:hover {
 
 .level2.detail .wrapper {
     background-image: url('/locations/level2-detail.jpg');
+}
+
+.level3 .wrapper {
+    background-image: url('/locations/level3-preview.jpg');
+}
+
+.level3.detail .wrapper {
+    background-image: url('/locations/level3-detail.jpg');
 }

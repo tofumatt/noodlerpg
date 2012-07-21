@@ -49,7 +49,10 @@ var Game = function() {
               enemy.addClass('dead').removeClass('alive');
               enemyHP = 0;
               message.text('You win!');
-              fightAgain.fadeIn();
+
+              if (playerHP > 1) {
+                fightAgain.fadeIn();
+              }
             } else {
               player.attr('src', player.attr('src').replace('-alive', '-dead'));
               player.addClass('dead').removeClass('alive');

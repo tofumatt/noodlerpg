@@ -1,0 +1,27 @@
+{
+    "location": "Planet Redzone",
+    "enemies":
+    [
+        {
+            "name": "Porky",
+            "avatar_alive": "/enemies/porky-alive.png",
+            "avatar_dead": "/enemies/porky-dead.png",
+            "battle_messages":
+            [
+                {
+                    "message": "Porky attacks you from behind like a pig!"
+                },
+                {
+                    "message": "Porky eats bacon in your face!"
+                }
+            ],
+            "hp": 30,
+            "damage_low_range": 5,
+            "damage_high_range": 16,
+            "gold_low_range": 10,
+            "gold_high_range": 16,
+            "xp_low_range": 3,
+            "xp_high_range": 4
+        }
+    ]
+}
