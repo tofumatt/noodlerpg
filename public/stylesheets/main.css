@@ -246,6 +246,10 @@ a.button:hover {
     background-color: #fff;
 }
 
+#start-over span {
+    font-size: 13px;
+}
+
 .jobs {
     margin-top: 20px;
 }

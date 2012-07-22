@@ -25,7 +25,11 @@ block content
       li#job
         h3 Job
         span
-          if session.job
+          if session.job.name
             = session.job.name
           else
             a(href='/job', class='button') Set a job
+      li#start-over
+        h3 Reset
+        span End game (you will lose all stats)
+          a(href='/reset', class='button') Reset!

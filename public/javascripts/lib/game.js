@@ -50,7 +50,7 @@ var Game = function() {
               enemyHP = 0;
               message.text('You win!');
 
-              if (playerHP > 1) {
+              if (playerHP > 1 && enemyHP < 1) {
                 fightAgain.fadeIn();
               }
             } else {

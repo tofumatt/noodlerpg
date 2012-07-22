@@ -2,7 +2,7 @@ extend layout
 
 block content
   .levels
-    - for (var i = 1; i < session.level + 1; i ++) {
+    - for (var i = 1; i < parseInt(session.level, 10) + 1; i ++) {
       a(href='/preview/#{i}')
         img(src='/scenes/level#{i}.png')
         span Level #{i}

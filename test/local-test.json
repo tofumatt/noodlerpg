@@ -4,5 +4,5 @@
     "authPort": 3000,
     "authUrl": "https://browserid.org",
     "session_secret": "secret",
-    "session_cookie": "session_your_cookie_name"
+    "session_cookie": "session_noodlerpgtest"
 }

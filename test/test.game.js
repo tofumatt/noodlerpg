@@ -32,7 +32,7 @@ var enemy = {
   xp_high_range: 3
 };
 
-var job = jobs[Object.keys(jobs)[0]]; // omg getting the first element of a hash.
+var job = jobs[Object.keys(jobs)[0]];
 
 var req = {
   session: {
@@ -53,8 +53,12 @@ var req = {
 };
 
 describe('game', function() {
+  after(function() {
+    db.flushdb();
+  });
+
   describe('battle', function() {
-    it('battles an enemy and both HPs are less', function(done) {
+    it('fights an enemy and both HPs are less', function(done) {
       req.body.enemy_hp = 20;
       game.battle(req, enemy, db, function(err, result) {
         should.exist(result);
@@ -64,7 +68,7 @@ describe('game', function() {
       });
     });
 
-    it('battles an enemy and player wins', function(done) {
+    it('fights an enemy and player wins', function(done) {
       enemy.hp = 0;
       req.body.enemy_hp = 0;
       game.battle(req, enemy, db, function(err, result) {
@@ -76,7 +80,8 @@ describe('game', function() {
       });
     });
 
-    it('battles an enemy and player loses', function(done) {
+    it('fights an enemy and player loses', function(done) {
+      enemy.hp = req.body.enemy_hp = 50;
       req.session.hp = 0;
       game.battle(req, enemy, db, function(err, result) {
         should.exist(result);

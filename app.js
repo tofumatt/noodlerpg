@@ -20,7 +20,7 @@ var isLoggedIn = function(req, res, next) {
 };
 
 var hasJob = function(req, res, next) {
-  if (req.session.job) {
+  if (req.session.job.name) {
     next();
   } else {
     res.redirect('/job');
@@ -28,7 +28,7 @@ var hasJob = function(req, res, next) {
 };
 
 var hasNoJob = function(req, res, next) {
-  if (!req.session.job) {
+  if (!req.session.job.name) {
     next();
   } else {
     res.redirect('/dashboard');

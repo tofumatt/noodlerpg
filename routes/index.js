@@ -18,15 +18,21 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
   app.get('/dashboard', isLoggedIn, resetEnemy, function(req, res) {
     res.render('game_dashboard', {
       pageType: 'dashboard',
-      level: user.level,
+      level: req.session.level,
       title: 'Dashboard'
+    });
+  });
+
+  app.get('/reset', function(req, res) {
+    user.resetStats(req, db, function(err, user) {
+      res.redirect('/logout', 303);
     });
   });
 
   app.get('/universe', isLoggedIn, resetEnemy, function(req, res) {
     res.render('universe', {
       pageType: 'universe',
-      level: user.level,
+      level: req.session.level,
       title: 'Noodle Universe'
     });
   });
@@ -46,7 +52,7 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
             hp: user.hp,
             gold: user.gold,
             status: 200
-          }
+          };
         }
 
         res.json(data);
@@ -102,7 +108,7 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
     var level = parseInt(req.body.level, 10);
     var config = require('../config/level' + level);
     var result = {};
-    
+
     game.battle(req, req.session.enemy, db, function(err, result) {
       res.json({
         result: result
