@@ -11,8 +11,6 @@ module.exports = function(app, db, nconf, isLoggedIn) {
             req.session[name] = userStat[name];
           }
 
-          req.session.email = email;
-
           res.redirect('/dashboard');
         });
       } else {
