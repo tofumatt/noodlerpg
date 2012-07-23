@@ -1,4 +1,6 @@
-var Game = function() {
+'use strict';
+
+define(['jquery'], function ($) {
   var enemy = $('img.enemy');
   var stats = $('ol.stats');
   var statsDashboard = $('ol.dashboard-stats');
@@ -77,4 +79,4 @@ var Game = function() {
   };
 
   return self;
-};
+});
