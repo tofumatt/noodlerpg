@@ -3,6 +3,7 @@
 var game = require('../lib/game');
 var user = require('../lib/user');
 var config = require('../config/defaults');
+var tools = require('../config/tools');
 
 module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevelAccess, hasEnemy, resetEnemy) {
   app.get('/', function(req, res) {
@@ -26,6 +27,15 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
   app.get('/reset', function(req, res) {
     user.resetStats(req, db, function(err, user) {
       res.redirect('/logout', 303);
+    });
+  });
+
+  app.get('/store', isLoggedIn, resetEnemy, function(req, res) {
+    res.render('store', {
+      pageType: 'store',
+      level: req.session.level,
+      tools: tools,
+      title: 'Noodle Goods Shoppe'
     });
   });
 

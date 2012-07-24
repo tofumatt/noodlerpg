@@ -89,22 +89,6 @@ describe('user', function() {
       });
     });
 
-    it('sets the user tool if correctly defined', function(done) {
-      user.setTool('fist', db, function(err, tool) {
-        should.exist(tool);
-        tool['fist'].name.toLowerCase().should.equal('fist');
-        done();
-      });
-    });
-
-    it('sets the user tool if incorrectly defined', function(done) {
-      user.setTool('fist-nonexistent', db, function(err, tool) {
-        should.exist(tool);
-        tool['fist'].name.toLowerCase().should.equal('fist');
-        done();
-      });
-    });
-
     it('resets the user stats', function(done) {
       req.session.gold = 1000;
       req.session.hp = 1000;

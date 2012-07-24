@@ -16,6 +16,7 @@ block content
       - for(var name in session.tools) {
         li(data-tool='#{session.tools[name].name}')
           img(src='/tools/#{session.tools[name].name}.png')
+          span= session.tools[name].name
       - }
 
   if session.hp > 0

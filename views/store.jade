@@ -1,0 +1,22 @@
+extend layout
+
+block content
+  h1= title
+
+  ul.items
+    - for (var name in tools) {
+      li
+        img(src='/tools/#{name}.png')
+        span.cost= tools[name].cost
+        span= tools[name].name
+    - }
+
+  ul.stats
+    li
+      h3 Gold Available
+      span= session.gold
+
+  #ship
+    .message
+      p Return to homebase!
+    a(href='/dashboard') Dashboard
