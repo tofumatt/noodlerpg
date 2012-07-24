@@ -31,10 +31,13 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
   });
 
   app.get('/store', isLoggedIn, resetEnemy, function(req, res) {
+    var saleTools = tools;
+    delete saleTools['fist'];
+
     res.render('store', {
       pageType: 'store',
       level: req.session.level,
-      tools: tools,
+      tools: saleTools,
       title: 'Noodle Goods Shoppe'
     });
   });

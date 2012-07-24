@@ -15,7 +15,9 @@ block content
             = 'Needs the following: '
             ol
               - for (var item in tools[name].prerequisites) {
-                li= tools[name].prerequisites[item].tool
+                li
+                  -
+                  = tools[name].prerequisites[item].tool
               - }
     - }
 
