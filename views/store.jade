@@ -9,6 +9,14 @@ block content
         img(src='/tools/#{name}.png')
         span.cost= tools[name].cost
         span= tools[name].name
+
+        if tools[name].prerequisites.length > 0
+          .requirements
+            = 'Needs the following: '
+            ol
+              - for (var item in tools[name].prerequisites) {
+                li= tools[name].prerequisites[item].tool
+              - }
     - }
 
   ul.stats
