@@ -47,4 +47,11 @@ define(['jquery', 'game'],
       ev.preventDefault();
       game.refuel();
     });
+
+    // Purchasing items
+    var toolItems = $('ul.items');
+
+    toolItems.on('click', 'li', function() {
+      game.buy($(this));
+    });
 });

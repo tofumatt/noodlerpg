@@ -8,6 +8,7 @@ define(['jquery'], function ($) {
   var fightAction = $('img.action');
   var message = $('.battle-message');
   var fightAgain = $('.fight-again');
+  var goldAmount = $('.stats .gold');
 
   var updateStats = function(options) {
     enemy.data('hp', options.enemy_hp);
@@ -46,7 +47,7 @@ define(['jquery'], function ($) {
           var mp = data.result.mp;
 
           if (enemyHP < 1 || playerHP < 1) {
-            if (enemyHP < 1 && playerHP > 0) {
+            if (enemyHP < 1) {
               enemy.attr('src', enemy.attr('src').replace('-alive', '-dead'));
               enemy.addClass('dead').removeClass('alive');
               enemyHP = 0;
@@ -73,6 +74,20 @@ define(['jquery'], function ($) {
           });
 
           fightAction.fadeOut();
+        });
+      }
+    },
+    buy: function(self) {
+      var goldAmountNum = parseInt(goldAmount.text(), 10);
+
+      var params = {
+        cost: parseInt(self.find('span.cost').text(), 10),
+        tool: self.find('span.tool-type').data('key')
+      };
+
+      if (goldAmountNum >= params.cost) {
+        $.post('/buy', params, function(data) {
+          goldAmount.text(data.result.gold);
         });
       }
     }

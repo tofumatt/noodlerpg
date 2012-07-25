@@ -24,7 +24,7 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
     });
   });
 
-  app.get('/reset', function(req, res) {
+  app.get('/reset', isLoggedIn, function(req, res) {
     user.resetStats(req, db, function(err, user) {
       res.redirect('/logout', 303);
     });
@@ -39,6 +39,30 @@ module.exports = function(app, db, isLoggedIn, hasJob, hasNoJob, sufficientLevel
       level: req.session.level,
       tools: saleTools,
       title: 'Noodle Goods Shoppe'
+    });
+  });
+
+  app.post('/buy', isLoggedIn, resetEnemy, function(req, res) {
+    if (!req.session.tools[req.body.tool]) {
+      req.session.gold -= parseInt(req.body.cost, 10);
+      req.session.tools[req.body.tool] = tools[req.body.tool];
+    }
+
+    user.saveStats(req, db, function(err, user) {
+      var data = {};
+      data.result = {};
+
+      if (err) {
+        data.result.status = 500;
+      } else {
+        data.result = {
+          hp: user.hp,
+          gold: user.gold,
+          status: 200
+        };
+      }
+
+      res.json(data);
     });
   });
 
