@@ -15,7 +15,7 @@
                     "message": "Porky eats bacon in your face!"
                 }
             ],
-            "hp": 30,
+            "hp": 40,
             "damage_low_range": 5,
             "damage_high_range": 16,
             "gold_low_range": 22,
@@ -36,7 +36,7 @@
                     "message": "Lavaface spits fire in your face!"
                 }
             ],
-            "hp": 35,
+            "hp": 45,
             "damage_low_range": 7,
             "damage_high_range": 18,
             "gold_low_range": 24,

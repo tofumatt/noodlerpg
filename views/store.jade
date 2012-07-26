@@ -22,7 +22,7 @@ block content
   ul.items
     - for (var name in tools) {
       - var enabled = 'enabled';
-      - if (tools[name].cost > session.gold) {
+      - if (tools[name].cost > session.gold || session.tools[name]) {
         enabled = 'disabled';
       - } else {
         - if (tools[name].prerequisites.length > 0) {

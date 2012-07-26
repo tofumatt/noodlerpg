@@ -15,7 +15,7 @@
                     "message": "Porky eats bacon in your face!"
                 }
             ],
-            "hp": 45,
+            "hp": 65,
             "damage_low_range": 14,
             "damage_high_range": 23,
             "gold_low_range": 38,
@@ -36,7 +36,7 @@
                     "message": "Sandy splits into two and attacks you from various angles!"
                 }
             ],
-            "hp": 55,
+            "hp": 75,
             "damage_low_range": 16,
             "damage_high_range": 26,
             "gold_low_range": 48,
