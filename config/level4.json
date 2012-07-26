@@ -1,0 +1,27 @@
+{
+    "location": "Dark Moon Land",
+    "enemies":
+    [
+        {
+            "name": "Siren",
+            "avatar_alive": "/enemies/siren-alive.png",
+            "avatar_dead": "/enemies/siren-dead.png",
+            "battle_messages":
+            [
+                {
+                    "message": "Siren sings a terrible pop song in a high pitch!"
+                },
+                {
+                    "message": "Siren gives you the worst tinnitus!"
+                }
+            ],
+            "hp": 68,
+            "damage_low_range": 25,
+            "damage_high_range": 38,
+            "gold_low_range": 49,
+            "gold_high_range": 63,
+            "xp_low_range": 12,
+            "xp_high_range": 16
+        }
+    ]
+}

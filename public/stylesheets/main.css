@@ -451,10 +451,15 @@ img.action {
 }
 
 ol.tools {
+    background-image: url('/misc/tool-dash.png');
+    padding: 15px 15px 5px 0px;
     display: block;
+    border-radius: 8px;
     position: absolute;
     top: 400px;
     left: 10px;
+    box-shadow: inset #000 1px 1px 5px;
+    border: 1px solid #111;
 }
 
 ol.tools li {
@@ -471,7 +476,7 @@ ol.tools li, .store .items li {
 }
 
 .detail ol.tools li span {
-    text-shadow: #fff 1px 1px 6px;
+    text-shadow: #eee 0px 0px 3px;
 }
 
 .detail ol.tools li:hover span {
@@ -575,4 +580,12 @@ a.fight-again:hover {
 
 .level3.detail .wrapper {
     background-image: url('/locations/level3-detail.jpg');
+}
+
+.level4 .wrapper {
+    background-image: url('/locations/level4-preview.jpg');
+}
+
+.level4.detail .wrapper {
+    background-image: url('/locations/level4-detail.jpg');
 }
