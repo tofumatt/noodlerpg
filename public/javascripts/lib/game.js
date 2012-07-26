@@ -85,7 +85,7 @@ define(['jquery'], function ($) {
         tool: self.find('span.tool-type').data('key')
       };
 
-      if (goldAmountNum >= params.cost) {
+      if (goldAmountNum >= params.cost && !self.hasClass('disabled')) {
         $.post('/buy', params, function(data) {
           goldAmount.text(data.result.gold);
         });

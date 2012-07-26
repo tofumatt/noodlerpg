@@ -16,12 +16,33 @@
                 }
             ],
             "hp": 45,
-            "damage_low_range": 11,
-            "damage_high_range": 20,
+            "damage_low_range": 14,
+            "damage_high_range": 23,
             "gold_low_range": 38,
             "gold_high_range": 50,
             "xp_low_range": 5,
             "xp_high_range": 7
+        },
+        {
+            "name": "Sandy",
+            "avatar_alive": "/enemies/sandy-alive.png",
+            "avatar_dead": "/enemies/sandy-dead.png",
+            "battle_messages":
+            [
+                {
+                    "message": "Sandy attacks you from behind with a sandstorm!"
+                },
+                {
+                    "message": "Sandy splits into two and attacks you from various angles!"
+                }
+            ],
+            "hp": 55,
+            "damage_low_range": 16,
+            "damage_high_range": 26,
+            "gold_low_range": 48,
+            "gold_high_range": 60,
+            "xp_low_range": 8,
+            "xp_high_range": 11
         }
     ]
 }

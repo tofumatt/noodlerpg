@@ -14,8 +14,9 @@ block content
 
     ol.tools(data-level='#{level}')
       - for(var name in session.tools) {
-        li(data-tool='#{session.tools[name].name}')
-          img(src='/tools/#{session.tools[name].name}.png')
+        - var toolName = session.tools[name].name.replace(/\s/, '_');
+        li(data-tool='#{toolName}')
+          img(src='/tools/#{toolName}.png')
           span= session.tools[name].name
       - }
 
